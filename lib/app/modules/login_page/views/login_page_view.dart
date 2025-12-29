@@ -1,4 +1,5 @@
 import 'package:capycare/app/styles/styles.dart';
+import 'package:capycare/app/widgets/button.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -10,9 +11,7 @@ class LoginPageView extends GetView<LoginPageController> {
   @override
   Widget build(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
-
+    final height = MediaQuery.of(context).size.height;    
 
     return Scaffold(
       resizeToAvoidBottomInset: true,
@@ -118,21 +117,11 @@ class LoginPageView extends GetView<LoginPageController> {
                   SizedBox(height: height * 0.03),
       
                   /// Login Button
-                  Container(
-                    height: height * 0.065,
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: AppColors.enable,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Login',
-                        style: AppText.button.copyWith(
-                          color: AppColors.dark,
-                        ),
-                      ),
-                    ),
+                  PrimaryButton(
+                    label: "Login", onTap: () {},
+                    activeColor: AppColors.Quaternary,
+                    inactiveColor: AppColors.enable,
+                    textStyle: AppText.button,
                   ),
       
                   SizedBox(height: height * 0.03),
@@ -172,22 +161,12 @@ class LoginPageView extends GetView<LoginPageController> {
       
                   SizedBox(height: height * 0.02),
       
-                  Container(
-                    height: height * 0.065,
-                    width: width,
-                    decoration: BoxDecoration(
-                      color: AppColors.tertiary,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Center(
-                      child: Text(
-                        'Create Account',
-                        style: AppText.button.copyWith(
-                          color: AppColors.dark,
-                        ),
-                      ),
-                    ),
-                  ),
+                  PrimaryButton(
+                    label: "Create Account", onTap: () {},
+                    activeColor: AppColors.Quaternary,
+                    inactiveColor: AppColors.tertiary,
+                    textStyle: AppText.button,
+                    )
                 ],
               ),
             ),
